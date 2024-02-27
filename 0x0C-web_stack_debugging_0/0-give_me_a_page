@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
-# Run
-echo "ServerName localhost" >> /etc/apache2.conf
+
+# Update package lists
+apt-get update
+
+# Install Apache (if not already installed)
+apt-get install -y apache2
+
+# Configure Apache to set ServerName
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Start Apache service
 service apache2 start
